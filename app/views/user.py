@@ -1,7 +1,7 @@
 from flask.views import MethodView 
 from flask import render_template, request, url_for, redirect, flash
 from flask.ext.login import login_user, logout_user, current_user, login_required
-from manage import db
+from app import db
 from app.models import User, pwd_context
 
 class UserRegister(MethodView): 

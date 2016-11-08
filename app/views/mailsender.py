@@ -53,7 +53,7 @@ class MailGenerateToken(MethodView):
 
     @login_required
     def get(self): 
-        return jsonify('token': current_user.getToken())
+        return jsonify({'token': current_user.getToken()})
 
     def post(self): 
         token = current_user.generate_auth_token(600)

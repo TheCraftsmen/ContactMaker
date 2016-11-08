@@ -1,4 +1,4 @@
-from manage import app, db 
+from app import app, db 
 from sqlalchemy import ForeignKey
 from itsdangerous import (TimedJSONWebSignatureSerializer
                           as Serializer, BadSignature, SignatureExpired)
