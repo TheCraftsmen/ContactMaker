@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+<h1 class="text-center">MAILSENDER</h1> 
+
+<form id="new_sales" action="" method="post">
+    <input type="hidden" name="token" id="token">
+    <input type="text" id="nombre" name="nombre" placeholder="nombre">
+    <input type="text" id="email" name="email" placeholder="e-mail">
+    <textarea name="description" placeholder="pedido"></textarea>
+    <input type="submit" name="confirmar" value="confirmar">
+</form>
+
+<script type="text/javascript">
+  $('#new_sales').submit(function(event){
+    $.ajax({
+      url: '/mailsender',
+      type: 'POST',
+      data: $('#new_sales').serialize(),
+      success: function(response){
+        console.log('todo piola')
+      },
+      error: function(response){
+        console.log('error');
+      }
+    });
+    //event.preventDefault();
+    return false;
+  });
+</script>
+
+{% endblock %} 
